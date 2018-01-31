@@ -67,17 +67,9 @@ namespace DataStructure
             //#endregion
 
             BinarySearchTree bst = new BinarySearchTree();
-            bst.AddElement(10);
-            bst.AddElement(18);
-            bst.AddElement(15);
-            bst.AddElement(21);
-            bst.AddElement(4);
-            bst.AddElement(6);
-            bst.AddElement(8);
 
-            Console.WriteLine("Root Node: {0}", bst.Root.Value);
-            Console.WriteLine("Left Node: {0}", bst.Root.Left.Value);
-            Console.WriteLine("Right Node: {0}", bst.Root.Right.Value);
+            for (int i = 1; i <= 20; i = i + 1)
+                bst.AddElement(i);
 
             Console.WriteLine("\nIn-order traversal");
             BinaryTree<int>.InOrderTraversal(bst.Root);
@@ -85,6 +77,8 @@ namespace DataStructure
             BinaryTree<int>.PreOrderTraversal(bst.Root);
             Console.WriteLine("\n\nPostorder traversal");
             BinaryTree<int>.PostOrderTraversal(bst.Root);
+
+            Console.WriteLine("\n\nHeight: {0}", BinaryTree<int>.GetHeight(bst.Root));
 
             Console.ReadLine();
         }
