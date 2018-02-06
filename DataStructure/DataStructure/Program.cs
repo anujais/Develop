@@ -67,18 +67,43 @@ namespace DataStructure
             //#endregion
 
             BinarySearchTree bst = new BinarySearchTree();
+            bst.AddElement(2);
 
-            for (int i = 1; i <= 20; i = i + 1)
-                bst.AddElement(i);
+            //for (int i = 1; i <= 20; i = i + 1)
+            //    bst.AddElement(i);
+
+            BinaryTreeNode<int> btn = new BinaryTreeNode<int>(1, null, null);
+            btn.Left = new BinaryTreeNode<int>(2, new BinaryTreeNode<int>(4, new BinaryTreeNode<int>(7, null, null), null), new BinaryTreeNode<int>(5, null, null));
+            btn.Right = new BinaryTreeNode<int>(3, null, null);
 
             Console.WriteLine("\nIn-order traversal");
-            BinaryTree<int>.InOrderTraversal(bst.Root);
+            BinaryTree<int>.InOrderTraversal(btn);
             Console.WriteLine("\n\nPreorder traversal");
-            BinaryTree<int>.PreOrderTraversal(bst.Root);
+            BinaryTree<int>.PreOrderTraversal(btn);
             Console.WriteLine("\n\nPostorder traversal");
-            BinaryTree<int>.PostOrderTraversal(bst.Root);
+            BinaryTree<int>.PostOrderTraversal(btn);
 
-            Console.WriteLine("\n\nHeight: {0}", BinaryTree<int>.GetHeight(bst.Root));
+            Console.WriteLine("\n\nHeight: {0}", BinaryTree<int>.GetHeight(btn));
+
+            Console.WriteLine("\n\n Ancestors");
+
+            //BinaryTree<int>.GetAncestors(btn, 4);
+            //BinaryTree<int>.GetAncestors(btn, 3);
+            //BinaryTree<int>.GetAncestors(btn, 7);
+            //BinaryTree<int>.GetAncestors(btn, 1);
+            //BinaryTree<int>.GetAncestors(btn, 8);
+            BinaryTree<int>.GetAncestors(btn, 4);
+
+            Console.WriteLine("\n\nKth Ancestors");
+            BinaryTree<int>.GetKthAncestors(btn, 7, 1);
+
+            Console.WriteLine("\n\nLevel order traversal::");
+            BinaryTree<int>.LevelOrderTraversal(btn);
+
+            Console.Write("\n\nLevel: ");
+            BinaryTree<int>.PrintLevel(btn,1);
+
+            Console.Write("\n\n Node count at Level: {0}", BinaryTree<int>.GetNodesCountAtLevel(btn, 1));
 
             Console.ReadLine();
         }

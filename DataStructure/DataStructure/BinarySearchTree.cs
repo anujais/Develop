@@ -84,8 +84,14 @@ namespace DataStructure
         }
 
         public void DeleteElement(int data)
-        { 
-        
+        {
+
         }
+
+        public int GetParent(int element)
+        {
+            return 0;
+        }
+
     }
 }
